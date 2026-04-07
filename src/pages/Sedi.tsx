@@ -36,8 +36,9 @@ const Sedi = () => {
         <Header />
         <main>
           {/* Hero Section */}
-          <section className="py-16 bg-primary">
-            <div className="container mx-auto px-4 text-center">
+          <section className="py-16 relative overflow-hidden bg-gradient-to-br from-primary via-primary to-chart-2">
+            <div className="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float-slow pointer-events-none" />
+            <div className="container mx-auto px-4 text-center relative z-10">
               <AnimatedSection animation="fade-up">
                 <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">Le Nostre Sedi</h1>
                 <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto">
@@ -48,12 +49,12 @@ const Sedi = () => {
           </section>
 
           {/* Sedi Section */}
-          <section className="py-16 bg-background">
+          <section className="py-16 mesh-gradient bg-background">
             <div className="container mx-auto px-4">
               <div className="space-y-12">
                 {sedi.map((sede, index) => (
                   <AnimatedSection key={index} animation={index % 2 === 0 ? "fade-right" : "fade-left"} delay={index * 150}>
-                    <Card className="overflow-hidden">
+                    <Card className="glass-card overflow-hidden border-0 rounded-2xl shadow-xl">
                       <div className="grid md:grid-cols-2">
                         <div className="p-6 md:p-8 flex flex-col justify-center">
                           <CardHeader className="p-0 mb-4">

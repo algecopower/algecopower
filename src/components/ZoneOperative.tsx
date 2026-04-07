@@ -20,10 +20,13 @@ const zones = [
 
 const ZoneOperative = () => {
   return (
-    <section id="zone" className="py-20 bg-accent">
+    <section id="zone" className="py-16 mesh-gradient bg-background">
       <div className="container mx-auto px-4">
-        <AnimatedSection className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Dove operiamo</h2>
+        <AnimatedSection className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <span className="text-foreground">Dove </span>
+            <span className="text-gradient">operiamo</span>
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Sostituiamo contatori nelle province di Pavia, Lodi e Torino, su incarico diretto di E-Distribuzione.
           </p>
@@ -32,14 +35,16 @@ const ZoneOperative = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {zones.map((zone, index) => (
             <AnimatedSection key={index} animation={index === 0 ? "fade-right" : "fade-left"} delay={index * 150}>
-              <Card className="overflow-hidden hover:shadow-xl transition-shadow">
-                <CardHeader className="bg-secondary text-secondary-foreground">
+              <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 glass-card border-0 rounded-2xl">
+                <CardHeader className="bg-gradient-to-r from-secondary to-[hsl(220,40%,18%)] text-secondary-foreground">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <Building2 className="h-6 w-6" />
+                      <div className="bg-white/10 p-2 rounded-xl">
+                        <Building2 className="h-6 w-6" />
+                      </div>
                       <CardTitle className="text-2xl">{zone.region}</CardTitle>
                     </div>
-                    <Badge variant="secondary" className="bg-primary text-primary-foreground">
+                    <Badge variant="secondary" className="bg-primary text-primary-foreground shadow-md">
                       {zone.totalCommunes}
                     </Badge>
                   </div>

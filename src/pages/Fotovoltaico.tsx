@@ -41,14 +41,17 @@ const FotovoltaicoPage = () => {
         <main>
           {/* Hero Section */}
           <section className="relative min-h-[500px] flex items-center overflow-hidden">
-            <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${solarImage})` }}>
-              <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/40" />
+            <div className="absolute inset-0 bg-cover bg-center scale-105" style={{ backgroundImage: `url(${solarImage})` }}>
+              <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/85 to-secondary/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-secondary/40 via-transparent to-transparent" />
             </div>
+            {/* Decorative glass orbs */}
+            <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-primary/10 blur-3xl animate-float-slow pointer-events-none" />
             <div className="container mx-auto px-4 relative z-10 py-20">
               <div className="max-w-2xl">
                 <AnimatedSection animation="fade-left" delay={100}>
-                  <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
-                    <Sun className="h-4 w-4" />
+                  <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/15 text-white px-5 py-2.5 rounded-full text-sm font-medium mb-6">
+                    <Sun className="h-4 w-4 text-chart-1" />
                     Energie Rinnovabili
                   </div>
                 </AnimatedSection>
@@ -75,13 +78,13 @@ const FotovoltaicoPage = () => {
             </div>
           </section>
 
-          {/* Intro Section */}
-          <section className="py-20 bg-background">
+          <section className="py-16 mesh-gradient bg-background">
             <div className="container mx-auto px-4">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <AnimatedSection animation="fade-right">
-                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                    Perché scegliere il <span className="text-primary">fotovoltaico?</span>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                    <span className="text-foreground">Perché scegliere il </span>
+                    <span className="text-gradient">fotovoltaico?</span>
                   </h2>
                   <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                     Un impianto fotovoltaico ti permette di produrre la tua energia elettrica dal sole. In pratica, la bolletta scende e, in molti casi, rientri dell'investimento in pochi anni grazie agli incentivi fiscali.
@@ -93,7 +96,7 @@ const FotovoltaicoPage = () => {
                 <div className="space-y-4">
                   {benefits.map((benefit, index) => (
                     <AnimatedSection key={index} animation="fade-left" delay={index * 80}>
-                      <div className="flex items-center gap-3 bg-muted/50 p-4 rounded-lg">
+                      <div className="flex items-center gap-3 glass p-4 rounded-xl">
                         <CheckCircle className="h-6 w-6 text-primary flex-shrink-0" />
                         <span className="text-foreground font-medium">{benefit}</span>
                       </div>
@@ -104,11 +107,13 @@ const FotovoltaicoPage = () => {
             </div>
           </section>
 
-          {/* Services Section */}
-          <section className="py-20 bg-muted/30">
+          <section className="py-16 mesh-gradient bg-muted/60">
             <div className="container mx-auto px-4">
-              <AnimatedSection className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Come lavoriamo</h2>
+              <AnimatedSection className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                  <span className="text-foreground">Come </span>
+                  <span className="text-gradient">lavoriamo</span>
+                </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                   Dall'idea all'impianto funzionante, ti accompagniamo passo dopo passo. Ecco cosa facciamo concretamente.
                 </p>
@@ -117,10 +122,10 @@ const FotovoltaicoPage = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {services.map((service, index) => (
                   <AnimatedSection key={index} animation="fade-up" delay={index * 100} className="h-full">
-                    <Card className="group hover:shadow-lg transition-shadow border-border bg-card h-full">
+                    <Card className="glass-card group hover:shadow-xl hover:-translate-y-1 transition-all duration-500 h-full border-0">
                       <CardContent className="p-6 flex flex-col h-full">
-                        <div className="bg-primary/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                          <service.icon className="h-7 w-7 text-primary group-hover:text-primary-foreground transition-colors" />
+                        <div className="bg-gradient-to-br from-primary/15 to-chart-1/10 w-14 h-14 rounded-2xl flex items-center justify-center mb-4 group-hover:from-primary group-hover:to-primary group-hover:shadow-lg group-hover:glow-primary transition-all duration-500">
+                          <service.icon className="h-7 w-7 text-primary group-hover:text-primary-foreground transition-colors duration-500" />
                         </div>
                         <h3 className="text-xl font-semibold text-card-foreground mb-2">{service.title}</h3>
                         <p className="text-muted-foreground">{service.description}</p>

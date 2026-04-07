@@ -26,14 +26,18 @@ const ContatoriPage = () => {
         <main>
           {/* Hero Section */}
           <section className="relative h-[calc(100vh-120px)] flex items-center overflow-hidden">
-            <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }}>
-              <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/40" />
+            <div className="absolute inset-0 bg-cover bg-center scale-105" style={{ backgroundImage: `url(${heroImage})` }}>
+              <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/85 to-secondary/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-secondary/40 via-transparent to-transparent" />
             </div>
+            {/* Decorative glass orbs */}
+            <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-primary/10 blur-3xl animate-float-slow pointer-events-none" />
+            <div className="absolute bottom-1/3 right-1/3 w-48 h-48 rounded-full bg-chart-1/10 blur-3xl animate-float pointer-events-none" />
             <div className="container mx-auto px-4 relative z-10 py-8 md:py-12">
               <div className="max-w-2xl">
                 <AnimatedSection animation="fade-left" delay={100}>
-                  <div className="inline-flex items-center gap-2 bg-primary/20 text-primary-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
-                    <CheckCircle className="h-4 w-4" />
+                  <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/15 text-white px-5 py-2.5 rounded-full text-sm font-medium mb-6">
+                    <CheckCircle className="h-4 w-4 text-chart-1" />
                     Partner Ufficiale E-Distribuzione
                   </div>
                 </AnimatedSection>
@@ -57,25 +61,25 @@ const ContatoriPage = () => {
                     <Button size="lg" className="text-lg px-8" asChild>
                       <Link to="/contatti">Prenota Appuntamento</Link>
                     </Button>
-                    <Button size="lg" variant="outline" className="text-lg px-8 bg-secondary-foreground/10 border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/20" asChild>
+                    <Button size="lg" variant="outline" className="text-lg px-8 bg-white/15 border-white/30 text-white hover:bg-white hover:text-secondary hover:border-white" asChild>
                       <a href="#riconoscimento">Verifica Tecnico</a>
                     </Button>
                   </div>
                 </AnimatedSection>
 
                 <AnimatedSection animation="fade-up" delay={650}>
-                  <div className="mt-8 md:mt-10 grid grid-cols-3 gap-4 md:gap-6 text-secondary-foreground">
-                    <div>
-                      <div className="text-3xl font-bold text-primary">100+</div>
-                      <div className="text-sm text-secondary-foreground/70">Comuni serviti</div>
+                  <div className="mt-8 md:mt-10 grid grid-cols-3 gap-3 md:gap-4">
+                    <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4 text-center">
+                      <div className="text-2xl md:text-3xl font-bold text-white">100+</div>
+                      <div className="text-xs md:text-sm text-white/60 mt-1">Comuni serviti</div>
                     </div>
-                    <div>
-                      <div className="text-3xl font-bold text-primary">Gratuito</div>
-                      <div className="text-sm text-secondary-foreground/70">Servizio garantito</div>
+                    <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4 text-center">
+                      <div className="text-2xl md:text-3xl font-bold text-white">Gratuito</div>
+                      <div className="text-xs md:text-sm text-white/60 mt-1">Servizio garantito</div>
                     </div>
-                    <div>
-                      <div className="text-3xl font-bold text-primary">Rapido</div>
-                      <div className="text-sm text-secondary-foreground/70">Intervento veloce</div>
+                    <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4 text-center">
+                      <div className="text-2xl md:text-3xl font-bold text-white">Rapido</div>
+                      <div className="text-xs md:text-sm text-white/60 mt-1">Intervento veloce</div>
                     </div>
                   </div>
                 </AnimatedSection>

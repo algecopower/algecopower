@@ -34,8 +34,11 @@ const ChiSiamoPage = () => {
         <Header />
         <main>
           {/* Hero Section */}
-          <section className="bg-secondary py-20">
-            <div className="container mx-auto px-4">
+          <section className="relative overflow-hidden bg-gradient-to-br from-secondary via-secondary to-[hsl(220,40%,18%)] py-16">
+            {/* Decorative blobs */}
+            <div className="absolute top-10 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float-slow pointer-events-none" />
+            <div className="absolute bottom-10 left-10 w-64 h-64 bg-chart-1/8 rounded-full blur-3xl animate-float pointer-events-none" />
+            <div className="container mx-auto px-4 relative z-10">
               <AnimatedSection className="max-w-3xl mx-auto text-center" animation="fade-up">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground mb-6">
                   Chi <span className="text-primary">Siamo</span>
@@ -47,13 +50,13 @@ const ChiSiamoPage = () => {
             </div>
           </section>
 
-          {/* Mission Section */}
-          <section className="py-20 bg-background">
+          <section className="py-16 mesh-gradient bg-background">
             <div className="container mx-auto px-4">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <AnimatedSection animation="fade-right">
-                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                    La Nostra <span className="text-primary">Visione</span>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                    <span className="text-foreground">La Nostra </span>
+                    <span className="text-gradient">Visione</span>
                   </h2>
                   <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                     Crediamo che l'energia debba costare meno e inquinare meno. Per questo lavoriamo ogni giorno per portare il fotovoltaico nelle case e nelle aziende, e per modernizzare le infrastrutture elettriche del territorio.
@@ -68,9 +71,11 @@ const ChiSiamoPage = () => {
                 <div className="grid grid-cols-2 gap-4">
                   {values.map((value, index) => (
                     <AnimatedSection key={index} animation="fade-up" delay={index * 100} className="h-full">
-                      <Card className="border-border h-full">
+                      <Card className="glass-card border-0 h-full rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
                         <CardContent className="p-5 flex flex-col h-full">
-                          <value.icon className="h-8 w-8 text-primary mb-3" />
+                          <div className="bg-gradient-to-br from-primary/15 to-chart-1/10 p-2 rounded-xl w-fit mb-3">
+                            <value.icon className="h-8 w-8 text-primary" />
+                          </div>
                           <h3 className="font-semibold text-card-foreground mb-2">{value.title}</h3>
                           <p className="text-sm text-muted-foreground">{value.description}</p>
                         </CardContent>
@@ -83,11 +88,12 @@ const ChiSiamoPage = () => {
           </section>
 
           {/* Activities Section */}
-          <section className="py-20 bg-muted/30">
+          <section className="py-16 mesh-gradient bg-muted/60">
             <div className="container mx-auto px-4">
-              <AnimatedSection className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Le Nostre <span className="text-primary">Attività</span>
+              <AnimatedSection className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                  <span className="text-foreground">Le Nostre </span>
+                  <span className="text-gradient">Attività</span>
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                   Sappiamo fare il nostro mestiere e lo facciamo bene, dai piccoli impianti domestici ai grandi cantieri per la rete elettrica.
@@ -97,10 +103,10 @@ const ChiSiamoPage = () => {
               <div className="grid md:grid-cols-2 gap-8">
                 {activities.map((activity, index) => (
                   <AnimatedSection key={index} animation="fade-up" delay={index * 100} className="h-full">
-                    <Card className="group hover:shadow-lg transition-shadow border-border bg-card h-full">
+                    <Card className="glass-card group hover:shadow-xl hover:-translate-y-1 transition-all duration-500 border-0 h-full rounded-2xl">
                       <CardContent className="p-8 flex flex-col h-full">
-                        <div className="bg-primary/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                          <activity.icon className="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors" />
+                        <div className="bg-gradient-to-br from-primary/15 to-chart-1/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:from-primary group-hover:to-primary group-hover:shadow-lg group-hover:glow-primary transition-all duration-500">
+                          <activity.icon className="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500" />
                         </div>
                         <h3 className="text-2xl font-semibold text-card-foreground mb-4">{activity.title}</h3>
                         <p className="text-muted-foreground mb-4">{activity.description}</p>
@@ -118,11 +124,12 @@ const ChiSiamoPage = () => {
           </section>
 
           {/* Policies & Certifications Section */}
-          <section className="py-20 bg-background">
+          <section className="py-16 mesh-gradient bg-background">
             <div className="container mx-auto px-4">
-              <AnimatedSection className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Politiche e <span className="text-primary">Certificazioni</span>
+              <AnimatedSection className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                  <span className="text-foreground">Politiche e </span>
+                  <span className="text-gradient">Certificazioni</span>
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                   Lavoriamo secondo standard certificati. Qui puoi scaricare i documenti ufficiali.
@@ -131,9 +138,9 @@ const ChiSiamoPage = () => {
 
               <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto items-stretch">
                 <AnimatedSection animation="fade-up" delay={0}>
-                  <Card className="border-border bg-card hover:shadow-lg transition-shadow flex flex-col h-full">
+                  <Card className="glass-card border-0 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col h-full rounded-2xl">
                     <CardContent className="p-6 text-center flex flex-col flex-1">
-                      <div className="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <div className="bg-gradient-to-br from-primary/15 to-chart-1/10 w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4">
                         <Shield className="h-7 w-7 text-primary" />
                       </div>
                       <h3 className="font-semibold text-card-foreground mb-2">Politica Qualità, Sicurezza e Ambiente</h3>
@@ -148,9 +155,9 @@ const ChiSiamoPage = () => {
                 </AnimatedSection>
 
                 <AnimatedSection animation="fade-up" delay={150}>
-                  <Card className="border-border bg-card hover:shadow-lg transition-shadow flex flex-col h-full">
+                  <Card className="glass-card border-0 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col h-full rounded-2xl">
                     <CardContent className="p-6 text-center flex flex-col flex-1">
-                      <div className="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <div className="bg-gradient-to-br from-primary/15 to-chart-1/10 w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4">
                         <Heart className="h-7 w-7 text-primary" />
                       </div>
                       <h3 className="font-semibold text-card-foreground mb-2">Politica Parità di Genere</h3>
@@ -165,9 +172,9 @@ const ChiSiamoPage = () => {
                 </AnimatedSection>
 
                 <AnimatedSection animation="fade-up" delay={300}>
-                  <Card className="border-border bg-card hover:shadow-lg transition-shadow flex flex-col h-full">
+                  <Card className="glass-card border-0 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col h-full rounded-2xl">
                     <CardContent className="p-6 text-center flex flex-col flex-1">
-                      <div className="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <div className="bg-gradient-to-br from-primary/15 to-chart-1/10 w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4">
                         <FileText className="h-7 w-7 text-primary" />
                       </div>
                       <h3 className="font-semibold text-card-foreground mb-2">Segnalazioni</h3>

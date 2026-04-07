@@ -79,11 +79,22 @@ export default {
   				to: {
   					height: '0'
   				}
+  			},
+  			'blob-bounce': {
+  				'0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+  				'33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+  				'66%': { transform: 'translate(-20px, 20px) scale(0.9)' }
+  			},
+  			'shimmer': {
+  				'0%': { backgroundPosition: '-200% 0' },
+  				'100%': { backgroundPosition: '200% 0' }
   			}
   		},
   		animation: {
-  			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-down': 'accordion-down 0.3s cubic-bezier(0.16,1,0.3,1) forwards',
+  			'accordion-up': 'accordion-up 0.25s cubic-bezier(0.16,1,0.3,1) forwards',
+  			'blob-bounce': 'blob-bounce 7s ease-in-out infinite',
+  			'shimmer': 'shimmer 2s linear infinite'
   		},
   		fontFamily: {
   			sans: [

@@ -20,10 +20,10 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-card/80 backdrop-blur-md shadow-md sticky top-0 z-50">
+    <header className="glass-strong shadow-lg sticky top-0 z-50 border-b border-white/20">
       <div className="container mx-auto px-4">
         {/* Top bar */}
-        <div className="hidden md:flex items-center justify-end gap-6 py-2 text-sm border-b border-border">
+        <div className="hidden md:flex items-center justify-end gap-6 py-2 text-sm border-b border-white/15">
           <a
             href="tel:3913901303"
             className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
@@ -54,13 +54,15 @@ const Header = () => {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className={`transition-colors font-medium ${
-                  isActive(link.href) ? "text-primary" : "text-foreground hover:text-primary"
+                className={`px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm ${
+                  isActive(link.href)
+                    ? "bg-primary text-primary-foreground shadow-md glow-primary"
+                    : "text-foreground hover:bg-primary/10 hover:text-primary"
                 }`}
               >
                 {link.label}
@@ -76,21 +78,23 @@ const Header = () => {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col gap-4">
+          <div className="md:hidden py-4 border-t border-white/15">
+            <div className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`transition-colors font-medium ${
-                    isActive(link.href) ? "text-primary" : "text-foreground hover:text-primary"
+                  className={`px-4 py-3 rounded-xl transition-all duration-300 font-medium ${
+                    isActive(link.href)
+                      ? "bg-primary text-primary-foreground shadow-md"
+                      : "text-foreground hover:bg-primary/10 hover:text-primary"
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-border space-y-2">
+              <div className="pt-4 mt-2 border-t border-white/15 space-y-2">
                 <a href="tel:3913901303" className="flex items-center gap-2 text-muted-foreground">
                   <Phone className="h-4 w-4" />
                   <span>Pavia: 391 3901303</span>

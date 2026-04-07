@@ -60,8 +60,10 @@ const ContattiPage = () => {
         <Header />
         <main>
           {/* Hero Section */}
-          <section className="py-16 bg-primary">
-            <div className="container mx-auto px-4 text-center">
+          <section className="py-16 relative overflow-hidden bg-gradient-to-br from-primary via-primary to-chart-2">
+            <div className="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float-slow pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float pointer-events-none" />
+            <div className="container mx-auto px-4 text-center relative z-10">
               <AnimatedSection animation="fade-up">
                 <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">Contattaci</h1>
                 <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto">
@@ -72,10 +74,10 @@ const ContattiPage = () => {
           </section>
 
           {/* Form Section */}
-          <section className="py-16 bg-background">
+          <section className="py-16 mesh-gradient bg-background">
             <div className="container mx-auto px-4">
               <AnimatedSection animation="fade-up" delay={200} className="max-w-2xl mx-auto">
-                <Card>
+                <Card className="glass-card border-0 rounded-2xl shadow-xl">
                   <CardHeader>
                     <CardTitle className="text-2xl text-center">Lascia i tuoi dati</CardTitle>
                     <p className="text-muted-foreground text-center">

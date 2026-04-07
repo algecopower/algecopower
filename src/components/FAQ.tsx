@@ -21,26 +21,29 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
-        <AnimatedSection className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
+        <AnimatedSection className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 glass px-5 py-2.5 rounded-full text-sm font-medium mb-4 text-primary">
             <HelpCircle className="h-4 w-4" />
             Domande Frequenti
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">FAQ - Domande e Risposte</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <span className="text-foreground">FAQ - </span>
+            <span className="text-gradient">Domande e Risposte</span>
+          </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Trova le risposte alle domande più comuni sulla sostituzione dei contatori elettronici
           </p>
         </AnimatedSection>
 
         <AnimatedSection animation="fade-up" delay={200} className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-3">
             {faqItems.map((item, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card border border-border rounded-lg px-6 data-[state=open]:shadow-md transition-shadow"
+                className="bg-white border border-border/50 px-6 shadow-sm data-[state=open]:shadow-md border-b-0 rounded-2xl"
               >
                 <AccordionTrigger className="text-left font-semibold text-card-foreground hover:text-primary hover:no-underline py-4">
                   {item.question}
