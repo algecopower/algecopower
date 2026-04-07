@@ -25,7 +25,7 @@ const slides = [
     buttonLink: "/fotovoltaico",
     image: heroSolarImage,
     stats: [
-      { value: "Chiavi in mano", label: "Soluzioni complete" },
+      { value: "Su misura", label: "Soluzioni complete" },
       { value: "Risparmio", label: "Sui costi energetici" },
       { value: "-CO2", label: "Riduzione emissioni" },
     ],
@@ -103,7 +103,7 @@ const Hero = () => {
                       </div>
                     </AnimatedSection>
 
-                    <AnimatedSection animation="fade-up" delay={650}>
+                    <AnimatedSection animation="slide-up" delay={650}>
                       <div className="mt-8 md:mt-10 grid grid-cols-3 gap-3 md:gap-4">
                         {slide.stats.map((stat, index) => (
                           <div key={index} className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4 text-center">

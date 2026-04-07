@@ -39,7 +39,7 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
 interface AnimatedSectionProps {
   children: React.ReactNode;
   className?: string;
-  animation?: "fade-up" | "fade-left" | "fade-right" | "fade-in" | "scale-up";
+  animation?: "fade-up" | "fade-left" | "fade-right" | "fade-in" | "scale-up" | "slide-up";
   delay?: number;
   as?: React.ElementType;
 }
@@ -73,6 +73,10 @@ export const AnimatedSection = ({
     "scale-up": {
       hidden: "opacity-0 scale-95",
       visible: "opacity-100 scale-100",
+    },
+    "slide-up": {
+      hidden: "translate-y-8",
+      visible: "translate-y-0",
     },
   };
 
